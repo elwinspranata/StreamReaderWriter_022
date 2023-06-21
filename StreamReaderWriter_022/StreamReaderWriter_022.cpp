@@ -4,14 +4,14 @@
 using namespace std; 
 
 int main() {
-	string baris; 
+	string baris;
 
 	// membuka file dalam mode menulis. 
-	ofstream outfile; 
+	ofstream outfile;
 	// menunjukan ke sebuah nama file 
-	outfile.open("contohfile.txt"); 
+	outfile.open("contohfile.txt");
 
-	cout << ">= Menulis file, \'q\' untuk keluar" << endl; 
+	cout << ">= Menulis file, \'q\' untuk keluar" << endl;
 
 	//unlimited loop untuk menulis
 	while (true) {
@@ -22,16 +22,16 @@ int main() {
 		if (baris == "q") break;
 		// menulis dan memasukan nilai dari 'baris' ke dalam file 
 		outfile << baris << endl;
-	} 
+	}
 	//selesai dalam menulis sekarang tutup filenya 
-	outfile.close(); 
+	outfile.close();
 
 	//Membuka file dalam mode membaca 
-	ifstream infile; 
+	ifstream infile;
 	//menunjukan ke sebuah file 
-	infile.open("contohfile.txt"); 
+	infile.open("contohfile.txt");
 
-	cout << endl << ">= Membuka dan membaca file " << endl; 
+	cout << endl << ">= Membuka dan membaca file " << endl;
 	//jika file ada maka 
 	if (infile.is_open())
 	{
@@ -43,7 +43,8 @@ int main() {
 		}
 		//tutup file tersebut setelah selesai 
 		infile.close();
-	} 
-
-
-}
+	}
+	//jika tidak ditemukan file maka akan menampilkan ini 
+	else cout << "Unable to open file";
+	return 0;
+} 
